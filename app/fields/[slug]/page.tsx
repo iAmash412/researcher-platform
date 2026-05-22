@@ -101,7 +101,7 @@ export default async function FieldPage({
                 {field.name}
               </h1>
 
-              <div className="flex items-center gap-8 pt-4 border-t border-[rgba(255,255,255,0.07)] reveal reveal-d3">
+              <div className="flex items-center gap-4 sm:gap-8 pt-4 border-t border-[rgba(255,255,255,0.07)] reveal reveal-d3">
                 <div className="flex items-center gap-2">
                   <Users size={16} className="text-accent" />
                   <span className="text-xl font-bold text-[#efefef]">

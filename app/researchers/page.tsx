@@ -118,7 +118,7 @@ export default function ResearchersPage() {
           </div>
 
           {/* Sort bar */}
-          <div className="flex items-center gap-2 mb-6">
+          <div className="flex flex-wrap items-center gap-2 mb-6" role="group" aria-label="Sort options">
             <span className="text-[12px] text-muted uppercase tracking-wider">
               Sort by
             </span>
@@ -133,6 +133,7 @@ export default function ResearchersPage() {
               <button
                 key={opt.key}
                 onClick={() => setSortBy(opt.key)}
+                aria-pressed={sortBy === opt.key}
                 className={`px-3 py-1.5 rounded-full text-[12px] font-medium border cursor-pointer transition-all ${
                   sortBy === opt.key
                     ? 'bg-accent text-white border-accent'
@@ -145,6 +146,7 @@ export default function ResearchersPage() {
           </div>
 
           {/* Results grid */}
+          <h2 className="sr-only">Search results</h2>
           {filtered.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filtered.map((r) => (

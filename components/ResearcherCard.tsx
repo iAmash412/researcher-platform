@@ -58,7 +58,7 @@ export default function ResearcherCard({
     return (
       <Link
         href={`/researchers/${r.slug}`}
-        className="researcher-card block text-[#efefef] p-8 no-underline"
+        className="researcher-card block text-[#efefef] p-5 sm:p-8 no-underline"
         style={{
           background: '#161616',
           border: '1px solid rgba(0,153,255,0.12)',

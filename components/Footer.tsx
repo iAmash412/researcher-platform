@@ -20,20 +20,20 @@ export default function Footer() {
           Built from the inside of the research world.
         </p>
 
-        <div className="flex justify-center gap-6 mb-8">
+        <nav className="flex justify-center gap-6 mb-8" aria-label="Footer navigation">
           <Link
             href="/researchers"
-            className="text-[13px] text-text-body hover:text-accent transition-colors no-underline"
+            className="text-[13px] text-text-body hover:text-accent transition-colors no-underline inline-block py-2 px-1"
           >
             Directory
           </Link>
           <Link
             href="/researchers"
-            className="text-[13px] text-text-body hover:text-accent transition-colors no-underline"
+            className="text-[13px] text-text-body hover:text-accent transition-colors no-underline inline-block py-2 px-1"
           >
             Search
           </Link>
-        </div>
+        </nav>
 
         <div className="pt-6 border-t border-[rgba(0,0,0,0.06)]">
           <p className="text-[11px] text-muted tracking-wider">
@@ -42,6 +42,7 @@ export default function Footer() {
               href="https://openalex.org"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="OpenAlex (opens in new tab)"
               className="text-accent hover:text-accent-light transition-colors no-underline"
             >
               OpenAlex

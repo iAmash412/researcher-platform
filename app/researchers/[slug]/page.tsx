@@ -77,7 +77,7 @@ export default async function ResearcherProfile({
 
           {/* -- Header card (dark) -- */}
           <RevealSection
-            className="section-card section-card-dark p-8 md:p-12 mb-6"
+            className="section-card section-card-dark p-6 sm:p-8 md:p-12 mb-6"
             style={{ position: 'relative', overflow: 'hidden' }}
           >
             {/* Grid background */}
@@ -108,10 +108,11 @@ export default async function ResearcherProfile({
                     href={`https://orcid.org/${r.orcid}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="ORCID profile (opens in new tab)"
                     className="flex items-center gap-1.5 text-[12px] text-accent hover:text-accent-light transition-colors no-underline"
                   >
                     ORCID
-                    <ExternalLink size={11} />
+                    <ExternalLink size={11} aria-hidden="true" />
                   </a>
                 )}
               </div>
@@ -147,7 +148,7 @@ export default async function ResearcherProfile({
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-6 border-t border-[rgba(255,255,255,0.07)] reveal reveal-d4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 pt-6 border-t border-[rgba(255,255,255,0.07)] reveal reveal-d4">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <Award size={14} className="text-accent" />
@@ -242,29 +243,32 @@ export default async function ResearcherProfile({
                     href={`https://orcid.org/${r.orcid}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="ORCID Profile (opens in new tab)"
                     className="btn-outline no-underline !text-[13px]"
                   >
                     ORCID Profile
-                    <ExternalLink size={13} />
+                    <ExternalLink size={13} aria-hidden="true" />
                   </a>
                 )}
                 <a
                   href={`https://openalex.org/authors/${r.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="OpenAlex profile (opens in new tab)"
                   className="btn-outline no-underline !text-[13px]"
                 >
                   OpenAlex
-                  <ExternalLink size={13} />
+                  <ExternalLink size={13} aria-hidden="true" />
                 </a>
                 <a
                   href={`https://scholar.google.com/scholar?q=author:"${encodeURIComponent(r.name)}"+${encodeURIComponent(r.institution)}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Google Scholar profile (opens in new tab)"
                   className="btn-outline no-underline !text-[13px]"
                 >
                   Google Scholar
-                  <ExternalLink size={13} />
+                  <ExternalLink size={13} aria-hidden="true" />
                 </a>
               </div>
             </RevealSection>
@@ -273,7 +277,7 @@ export default async function ResearcherProfile({
           {/* -- Related researchers -- */}
           {related.length > 0 && (
             <RevealSection className="mt-12">
-              <div className="flex items-end justify-between mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6 gap-2">
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
                     <span className="section-num reveal reveal-d1">More in {r.field}</span>

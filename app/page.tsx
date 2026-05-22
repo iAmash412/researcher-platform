@@ -46,12 +46,12 @@ export default function Home() {
       {/* ===================================================================
           HERO — dark section-card container (Salter pattern)
       =================================================================== */}
-      <section style={{ padding: '0 16px 16px', paddingTop: '100px' }}>
+      <section style={{ padding: '0 12px 12px', paddingTop: '88px' }}>
         <div
           className="section-card section-card-dark"
           style={{
-            minHeight: '90vh',
-            padding: 'clamp(48px, 6vw, 80px)',
+            minHeight: 'min(90vh, 800px)',
+            padding: 'clamp(32px, 5vw, 80px) clamp(20px, 4vw, 80px)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -123,7 +123,7 @@ export default function Home() {
             <p
               style={{
                 fontSize: '16px',
-                color: '#4a4a4a',
+                color: 'rgba(255,255,255,0.55)',
                 maxWidth: '560px',
                 margin: '0 auto 40px',
                 lineHeight: 1.75,
@@ -166,16 +166,16 @@ export default function Home() {
       {/* ===================================================================
           STATS MARQUEE
       =================================================================== */}
-      <section className="marquee-wrap border-y border-[rgba(0,0,0,0.06)] py-4">
-        <div className="marquee-track">
+      <section className="marquee-wrap border-y border-[rgba(0,0,0,0.06)] py-4" aria-label="Platform statistics">
+        <div className="marquee-track" role="marquee" tabIndex={0}>
           {[...Array(4)].map((_, rep) => (
             <div key={rep} className="flex items-center">
               {statItems.map((stat) => (
                 <div
                   key={`${rep}-${stat.label}`}
-                  className="flex items-center gap-3 px-10"
+                  className="flex items-center gap-2 px-6 sm:gap-3 sm:px-10"
                 >
-                  <stat.icon size={16} className="text-accent" />
+                  <stat.icon size={16} className="text-accent" aria-hidden="true" />
                   <span className="text-2xl font-bold text-foreground tracking-tight">
                     {stat.value}
                   </span>
@@ -211,7 +211,7 @@ export default function Home() {
           />
 
           <div className="max-w-[1200px] mx-auto" style={{ position: 'relative', zIndex: 1 }}>
-            <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
                   <span className="section-num reveal reveal-d1">01</span>
