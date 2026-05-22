@@ -58,7 +58,11 @@ export default function ResearcherCard({
     return (
       <Link
         href={`/researchers/${r.slug}`}
-        className="researcher-card block bg-surface-dark text-[#efefef] p-8 no-underline"
+        className="researcher-card block text-[#efefef] p-8 no-underline"
+        style={{
+          background: '#161616',
+          border: '1px solid rgba(0,153,255,0.12)',
+        }}
       >
         <div className="flex items-start justify-between gap-3 mb-4">
           <span className={`badge ${getCareerBadgeClass(r.career_stage)}`}>

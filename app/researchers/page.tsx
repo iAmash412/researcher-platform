@@ -5,11 +5,12 @@
 
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Nav from '@/components/Nav'
 import ResearcherCard from '@/components/ResearcherCard'
 import SearchBar from '@/components/SearchBar'
 import Footer from '@/components/Footer'
+import ScrollProgress from '@/components/ScrollProgress'
 import {
   getAllResearchers,
   getAllFields,
@@ -50,19 +51,52 @@ export default function ResearchersPage() {
 
   const totalCitations = filtered.reduce((s, r) => s + r.citation_count, 0)
 
+  // Reveal on mount for the header
+  const headerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = headerRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.querySelectorAll('.reveal').forEach((r) => r.classList.add('visible'))
+          obs.disconnect()
+        }
+      },
+      { threshold: 0.06 },
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
   return (
     <>
+      <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
+      <div id="scroll-progress" />
+      <ScrollProgress />
 
-      <main className="pt-28 pb-16 px-4 md:px-6">
+      <main id="main" className="pt-28 pb-16 px-4 md:px-6">
         <div className="max-w-[1200px] mx-auto">
           {/* Header */}
-          <div className="mb-10">
-            <span className="section-num">Directory</span>
-            <h1 className="font-display italic text-4xl md:text-6xl text-foreground mt-3 mb-3">
+          <div ref={headerRef} className="mb-10">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+              <span className="section-num reveal reveal-d1">Directory</span>
+            </div>
+            <h1
+              className="reveal reveal-d2"
+              style={{
+                fontSize: 'clamp(36px, 5vw, 64px)',
+                fontWeight: 700,
+                letterSpacing: '-0.03em',
+                lineHeight: 0.95,
+                color: 'var(--text)',
+                marginBottom: '12px',
+              }}
+            >
               Researchers
             </h1>
-            <p className="text-[15px] text-text-body max-w-[500px]">
+            <p className="text-[15px] text-text-body max-w-[500px] reveal reveal-d3">
               {allResearchers.length} researchers across{' '}
               {fields.length} fields.{' '}
               {formatNumber(totalCitations)} total citations.

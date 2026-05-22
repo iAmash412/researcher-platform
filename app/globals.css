@@ -228,6 +228,9 @@ body::before {
   border: 1px solid rgba(255,255,255,0.08);
 }
 .tag-pill-light {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px; border-radius: 100px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
   background: rgba(0,0,0,0.05);
   color: rgba(0,0,0,0.5);
   border: 1px solid rgba(0,0,0,0.08);
@@ -281,4 +284,5 @@ body::before {
 @media (max-width: 640px) {
   .section-card { border-radius: 32px; }
   .nav-pill { border-radius: 24px; }
+  .cred-grid { grid-template-columns: 1fr !important; }
 }
