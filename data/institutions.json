@@ -1,0 +1,27 @@
+[
+  {
+    "id": "I33213144",
+    "name": "Brown University",
+    "slug": "brown-university",
+    "country": "United States",
+    "city": "Providence, RI",
+    "type": "Ivy League",
+    "researcher_count": 100,
+    "total_citations": 6105974,
+    "top_fields": [
+      "Physics and Astronomy",
+      "Medicine",
+      "Biochemistry, Genetics and Molecular Biology",
+      "Engineering",
+      "Environmental Science",
+      "Agricultural and Biological Sciences",
+      "Neuroscience",
+      "Mathematics",
+      "Business, Management and Accounting",
+      "Chemistry",
+      "Materials Science",
+      "Computer Science",
+      "Immunology and Microbiology"
+    ]
+  }
+]

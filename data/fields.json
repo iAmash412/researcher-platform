@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Physics and Astronomy",
+    "slug": "physics-and-astronomy",
+    "researcher_count": 41,
+    "total_citations": 2787091
+  },
+  {
+    "name": "Medicine",
+    "slug": "medicine",
+    "researcher_count": 21,
+    "total_citations": 1042616
+  },
+  {
+    "name": "Biochemistry, Genetics and Molecular Biology",
+    "slug": "biochemistry-genetics-and-molecular-biology",
+    "researcher_count": 11,
+    "total_citations": 815527
+  },
+  {
+    "name": "Engineering",
+    "slug": "engineering",
+    "researcher_count": 5,
+    "total_citations": 267470
+  },
+  {
+    "name": "Environmental Science",
+    "slug": "environmental-science",
+    "researcher_count": 4,
+    "total_citations": 216317
+  },
+  {
+    "name": "Agricultural and Biological Sciences",
+    "slug": "agricultural-and-biological-sciences",
+    "researcher_count": 3,
+    "total_citations": 238749
+  },
+  {
+    "name": "Neuroscience",
+    "slug": "neuroscience",
+    "researcher_count": 3,
+    "total_citations": 136073
+  },
+  {
+    "name": "Mathematics",
+    "slug": "mathematics",
+    "researcher_count": 3,
+    "total_citations": 116029
+  },
+  {
+    "name": "Business, Management and Accounting",
+    "slug": "business-management-and-accounting",
+    "researcher_count": 2,
+    "total_citations": 193116
+  },
+  {
+    "name": "Chemistry",
+    "slug": "chemistry",
+    "researcher_count": 2,
+    "total_citations": 104844
+  },
+  {
+    "name": "Materials Science",
+    "slug": "materials-science",
+    "researcher_count": 2,
+    "total_citations": 72228
+  },
+  {
+    "name": "Computer Science",
+    "slug": "computer-science",
+    "researcher_count": 2,
+    "total_citations": 66803
+  },
+  {
+    "name": "Immunology and Microbiology",
+    "slug": "immunology-and-microbiology",
+    "researcher_count": 1,
+    "total_citations": 49111
+  }
+]
