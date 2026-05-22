@@ -58,45 +58,45 @@ export default function ResearcherCard({
     return (
       <Link
         href={`/researchers/${r.slug}`}
-        className="researcher-card block text-[#efefef] p-5 sm:p-8 no-underline"
+        className="researcher-card block text-[#efefef] p-4 sm:p-6 no-underline"
         style={{
           background: '#161616',
           border: '1px solid rgba(0,153,255,0.12)',
         }}
       >
-        <div className="flex items-start justify-between gap-3 mb-4">
+        <div className="flex items-start justify-between gap-2 mb-3">
           <span className={`badge ${getCareerBadgeClass(r.career_stage)}`}>
             {r.career_stage}
           </span>
-          <span className="text-[11px] font-mono text-accent tracking-wider">
+          <span className="text-[11px] font-mono text-accent tracking-wider shrink-0">
             h-{r.h_index}
           </span>
         </div>
 
-        <h3 className="font-display italic text-2xl text-[#efefef] mb-1">
+        <h3 className="font-display italic text-lg sm:text-xl text-[#efefef] mb-1 truncate">
           {r.name}
         </h3>
-        <p className="text-[13px] text-[rgba(255,255,255,0.5)] mb-1">
+        <p className="text-[12px] text-[rgba(255,255,255,0.5)] mb-0.5 truncate">
           {r.department}
         </p>
-        <p className="text-[12px] text-[rgba(255,255,255,0.35)]">
+        <p className="text-[11px] text-[rgba(255,255,255,0.35)] truncate">
           {r.institution}
         </p>
 
-        <div className="flex items-center gap-5 mt-6 pt-4 border-t border-[rgba(255,255,255,0.07)]">
-          <div>
+        <div className="flex items-center gap-3 sm:gap-5 mt-4 pt-3 border-t border-[rgba(255,255,255,0.07)]">
+          <div className="min-w-0">
             <div className="stat-value">{formatNumber(r.citation_count)}</div>
             <div className="stat-label text-[rgba(255,255,255,0.3)]">
               Citations
             </div>
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="stat-value">{r.works_count}</div>
             <div className="stat-label text-[rgba(255,255,255,0.3)]">
               Works
             </div>
           </div>
-          <div>
+          <div className="min-w-0">
             <div className="stat-value">{r.recent_works_count}</div>
             <div className="stat-label text-[rgba(255,255,255,0.3)]">
               Recent
@@ -104,7 +104,7 @@ export default function ResearcherCard({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-1.5 mt-5">
+        <div className="flex flex-wrap gap-1 mt-4 overflow-hidden max-h-[52px]">
           {r.topics.slice(0, 3).map((topic) => (
             <span key={topic} className="tag-pill">
               {topic}

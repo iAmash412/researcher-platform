@@ -90,10 +90,10 @@ export default async function FieldPage({
               <h1
                 className="reveal reveal-d2"
                 style={{
-                  fontSize: 'clamp(32px, 5vw, 64px)',
+                  fontSize: 'clamp(28px, 4.5vw, 56px)',
                   fontWeight: 700,
                   letterSpacing: '-0.03em',
-                  lineHeight: 0.95,
+                  lineHeight: 1.05,
                   color: '#efefef',
                   marginBottom: '16px',
                 }}

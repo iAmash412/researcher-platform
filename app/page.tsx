@@ -173,13 +173,13 @@ export default function Home() {
               {statItems.map((stat) => (
                 <div
                   key={`${rep}-${stat.label}`}
-                  className="flex items-center gap-2 px-6 sm:gap-3 sm:px-10"
+                  className="flex items-center gap-1.5 px-4 sm:gap-2.5 sm:px-8"
                 >
-                  <stat.icon size={16} className="text-accent" aria-hidden="true" />
-                  <span className="text-2xl font-bold text-foreground tracking-tight">
+                  <stat.icon size={14} className="text-accent shrink-0" aria-hidden="true" />
+                  <span className="text-sm sm:text-base font-bold text-foreground tracking-tight">
                     {stat.value}
                   </span>
-                  <span className="text-[12px] text-muted uppercase tracking-widest">
+                  <span className="text-[10px] sm:text-[11px] text-muted uppercase tracking-widest">
                     {stat.label}
                   </span>
                 </div>
@@ -231,10 +231,10 @@ export default function Home() {
                 <h2
                   className="reveal reveal-d2"
                   style={{
-                    fontSize: 'clamp(32px, 4.5vw, 64px)',
+                    fontSize: 'clamp(28px, 4vw, 56px)',
                     fontWeight: 700,
                     letterSpacing: '-0.03em',
-                    lineHeight: 0.95,
+                    lineHeight: 1.05,
                     color: '#efefef',
                   }}
                 >
