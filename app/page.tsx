@@ -28,7 +28,7 @@ export default function Home() {
 
       <main id="main">
         {/* ── Hero ── */}
-        <section className="max-w-[1200px] mx-auto px-5 pt-16 pb-14 sm:pt-28 sm:pb-20">
+        <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-14 sm:pt-28 sm:pb-20">
           <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-4">
             Academic Directory
           </p>
@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* ── Stats ── */}
         <section className="border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-5 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          <div className="max-w-[1200px] mx-auto px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
             <div>
               <div className="stat-value">{stats.totalResearchers}</div>
               <div className="stat-label">Researchers</div>
@@ -70,7 +70,7 @@ export default function Home() {
         </section>
 
         {/* ── Featured Researchers ── */}
-        <section className="max-w-[1200px] mx-auto px-5 py-14 sm:py-20">
+        <section className="max-w-[1200px] mx-auto px-6 py-14 sm:py-20">
           <div className="flex items-end justify-between mb-8 gap-4">
             <div>
               <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
@@ -97,7 +97,7 @@ export default function Home() {
 
         {/* ── Fields ── */}
         <section className="bg-surface-alt border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-5 py-14 sm:py-20">
+          <div className="max-w-[1200px] mx-auto px-6 py-14 sm:py-20">
             <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
               Browse
             </p>
@@ -131,7 +131,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="max-w-[1200px] mx-auto px-5 py-16 sm:py-24 text-center">
+        <section className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-4">
             Research should be visible
           </h2>

@@ -49,7 +49,7 @@ export default async function ResearcherProfile({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[780px] mx-auto px-5 pt-10 pb-16">
+      <main id="main" className="max-w-[780px] mx-auto px-6 pt-10 pb-16">
         {/* Back */}
         <Link
           href="/researchers"
@@ -64,6 +64,7 @@ export default async function ResearcherProfile({
           <span className={`badge mb-3 ${getCareerBadgeClass(r.career_stage)}`}>
             {r.career_stage}
           </span>
+
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-1">
             {r.name}
           </h1>
