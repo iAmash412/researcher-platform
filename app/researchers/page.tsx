@@ -19,6 +19,7 @@ import {
 export default function ResearchersPage() {
   const allResearchers = getAllResearchers()
   const fields = getAllFields()
+  const careerStages = [...new Set(allResearchers.map((r) => r.career_stage))].sort()
 
   const [query, setQuery] = useState('')
   const [fieldFilter, setFieldFilter] = useState('')
@@ -69,6 +70,7 @@ export default function ResearchersPage() {
             onStageChange={setStageFilter}
             fields={fields}
             resultCount={filtered.length}
+            careerStages={careerStages}
           />
         </div>
 

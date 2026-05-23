@@ -22,9 +22,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const r = getResearcherBySlug(params.slug)
   if (!r) return { title: 'Researcher Not Found' }
+  const title = `${r.name} — ${r.institution} | Researcher Platform`
+  const description = `${r.name}, ${r.department} at ${r.institution}. h-index: ${r.h_index}, ${formatNumber(r.citation_count)} citations.`
   return {
-    title: `${r.name} — ${r.institution} | Researcher Platform`,
-    description: `${r.name}, ${r.department} at ${r.institution}. h-index: ${r.h_index}, ${formatNumber(r.citation_count)} citations.`,
+    title,
+    description,
+    openGraph: { title, description, type: 'profile' as const },
   }
 }
 

@@ -25,6 +25,7 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-6">
           <Link
             href="/researchers"
+            aria-current={isDirectory ? 'page' : undefined}
             className={`text-[13px] transition-colors ${
               isDirectory ? 'text-foreground font-medium' : 'text-muted hover:text-foreground'
             }`}
@@ -39,7 +40,7 @@ export default function Nav() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden bg-transparent border-none cursor-pointer text-foreground"
+          className="md:hidden bg-transparent border-none cursor-pointer text-foreground min-w-[44px] min-h-[44px] flex items-center justify-center"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
         >

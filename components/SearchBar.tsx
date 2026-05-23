@@ -16,9 +16,8 @@ interface SearchBarProps {
   onStageChange: (s: string) => void
   fields: Field[]
   resultCount: number
+  careerStages: string[]
 }
-
-const CAREER_STAGES = ['Distinguished', 'Established', 'Mid Career', 'Early Career']
 
 export default function SearchBar({
   query,
@@ -29,6 +28,7 @@ export default function SearchBar({
   onStageChange,
   fields,
   resultCount,
+  careerStages,
 }: SearchBarProps) {
   return (
     <div className="w-full" role="search" aria-label="Search researchers">
@@ -56,7 +56,7 @@ export default function SearchBar({
           value={fieldFilter}
           onChange={(e) => onFieldChange(e.target.value)}
           aria-label="Filter by field"
-          className="bg-white border border-border rounded-lg px-3 py-2 text-[13px] text-foreground outline-none cursor-pointer hover:border-foreground/30 transition-colors appearance-none w-full sm:w-auto"
+          className="select-field bg-white border border-border rounded-lg px-3 py-2 text-[13px] text-foreground outline-none cursor-pointer hover:border-foreground/30 transition-colors w-full sm:w-auto"
         >
           <option value="">All Fields</option>
           {fields.map((f) => (
@@ -70,10 +70,10 @@ export default function SearchBar({
           value={stageFilter}
           onChange={(e) => onStageChange(e.target.value)}
           aria-label="Filter by career stage"
-          className="bg-white border border-border rounded-lg px-3 py-2 text-[13px] text-foreground outline-none cursor-pointer hover:border-foreground/30 transition-colors appearance-none w-full sm:w-auto"
+          className="select-field bg-white border border-border rounded-lg px-3 py-2 text-[13px] text-foreground outline-none cursor-pointer hover:border-foreground/30 transition-colors w-full sm:w-auto"
         >
           <option value="">All Stages</option>
-          {CAREER_STAGES.map((s) => (
+          {careerStages.map((s) => (
             <option key={s} value={s}>
               {s}
             </option>

@@ -22,9 +22,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }) {
   const field = getFieldBySlug(params.slug)
   if (!field) return { title: 'Field Not Found' }
+  const title = `${field.name} Researchers | Researcher Platform`
+  const description = `Browse ${field.researcher_count} researchers in ${field.name}. ${formatNumber(field.total_citations)} total citations.`
   return {
-    title: `${field.name} Researchers | Researcher Platform`,
-    description: `Browse ${field.researcher_count} researchers in ${field.name}. ${formatNumber(field.total_citations)} total citations.`,
+    title,
+    description,
+    openGraph: { title, description, type: 'website' as const },
   }
 }
 

@@ -18,6 +18,7 @@ export default function ResearcherCard({
     <Link
       href={`/researchers/${r.slug}`}
       className="card block p-4 sm:p-5 no-underline"
+      aria-label={`${r.name}, ${r.department}`}
     >
       <div className="flex items-start justify-between gap-2 mb-3">
         <div className="min-w-0 flex-1">
