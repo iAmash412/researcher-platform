@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-12 px-6">
-      <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-5">
+    <footer className="border-t border-black/[0.06] py-16 px-6">
+      <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-6">
           <Link href="/" className="text-[13px] font-semibold text-foreground">
             Researcher

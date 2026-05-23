@@ -15,8 +15,8 @@ export default function Nav() {
   const isDirectory = pathname.startsWith('/researchers') || pathname.startsWith('/fields')
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-14 px-6">
+    <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-xl border-b border-black/[0.06]">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-16 px-6">
         <Link href="/" className="text-[15px] font-semibold tracking-tight">
           Researcher
         </Link>
@@ -50,7 +50,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-border px-6 py-3 bg-white flex flex-col gap-2">
+        <div className="md:hidden border-t border-black/[0.06] px-6 py-4 bg-white/90 backdrop-blur-lg flex flex-col gap-2">
           <Link
             href="/researchers"
             className="text-[13px] py-2 text-foreground"

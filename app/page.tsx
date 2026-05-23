@@ -28,7 +28,7 @@ export default function Home() {
 
       <main id="main">
         {/* ── Hero ── */}
-        <section className="max-w-[1200px] mx-auto px-6 pt-20 pb-16 sm:pt-32 sm:pb-24">
+        <section className="max-w-[1200px] mx-auto px-6 pt-24 pb-20 sm:pt-36 sm:pb-28">
           <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-5">
             Academic Directory
           </p>
@@ -48,8 +48,8 @@ export default function Home() {
         </section>
 
         {/* ── Stats ── */}
-        <section className="border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-6 py-12 sm:py-16 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12">
+        <section className="border-y border-black/[0.06]">
+          <div className="max-w-[1200px] mx-auto px-6 py-14 sm:py-20 grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-14">
             <div>
               <div className="stat-value">{stats.totalResearchers}</div>
               <div className="stat-label">Researchers</div>
@@ -70,8 +70,8 @@ export default function Home() {
         </section>
 
         {/* ── Featured Researchers ── */}
-        <section className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24">
-          <div className="flex items-end justify-between mb-12 gap-4">
+        <section className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28">
+          <div className="flex items-end justify-between mb-14 gap-4">
             <div>
               <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
                 Featured
@@ -88,7 +88,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {featured.map((r) => (
               <ResearcherCard key={r.id} researcher={r} />
             ))}
@@ -96,8 +96,8 @@ export default function Home() {
         </section>
 
         {/* ── Fields ── */}
-        <section className="bg-surface-alt border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24">
+        <section className="bg-surface-alt border-y border-black/[0.06]">
+          <div className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28">
             <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
               Browse
             </p>
@@ -110,7 +110,7 @@ export default function Home() {
                 <Link
                   key={field.slug}
                   href={`/fields/${field.slug}`}
-                  className="group flex items-center justify-between p-5 rounded-lg border border-transparent hover:border-border hover:bg-white transition-all"
+                  className="group flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-transparent hover:border-black/[0.08] hover:bg-white transition-all duration-300"
                 >
                   <div className="min-w-0">
                     <h3 className="text-[13px] sm:text-[14px] font-medium text-foreground group-hover:text-accent transition-colors truncate">
@@ -131,7 +131,7 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28 text-center">
+        <section className="max-w-[1200px] mx-auto px-6 py-24 sm:py-32 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-5">
             Research should be visible
           </h2>

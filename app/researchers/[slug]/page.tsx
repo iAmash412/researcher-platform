@@ -75,7 +75,7 @@ export default async function ResearcherProfile({
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 p-5 sm:p-6 rounded-lg bg-surface-alt border border-border mb-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-surface-alt border border-border mb-12">
           <div>
             <div className="stat-value">{r.h_index}</div>
             <div className="stat-label">h-index</div>
@@ -104,7 +104,7 @@ export default async function ResearcherProfile({
               <span key={t} className="tag">{t}</span>
             ))}
           </div>
-          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border text-[13px] text-text-secondary">
+          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-black/[0.06] text-[13px] text-text-secondary">
             <span>Last published: {r.last_publication_year}</span>
             <Link
               href={`/fields/${r.field_slug}`}
@@ -152,7 +152,7 @@ export default async function ResearcherProfile({
 
         {/* Related */}
         {related.length > 0 && (
-          <div className="border-t border-border pt-12">
+          <div className="border-t border-black/[0.06] pt-14">
             <div className="flex items-end justify-between mb-6">
               <h2 className="text-lg font-semibold tracking-tight">
                 More in {r.field}
@@ -169,7 +169,7 @@ export default async function ResearcherProfile({
                 <Link
                   key={rel.id}
                   href={`/researchers/${rel.slug}`}
-                  className="card flex items-center justify-between p-3 sm:p-4 no-underline gap-2"
+                  className="card flex items-center justify-between p-4 sm:p-5 no-underline gap-3"
                 >
                   <div className="min-w-0 flex-1">
                     <p className="text-[13px] sm:text-[14px] font-medium text-foreground truncate">{rel.name}</p>

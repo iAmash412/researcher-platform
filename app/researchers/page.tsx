@@ -87,10 +87,10 @@ export default function ResearchersPage() {
               key={opt.key}
               onClick={() => setSortBy(opt.key)}
               aria-pressed={sortBy === opt.key}
-              className={`px-3 py-1 rounded-md text-[12px] font-medium border cursor-pointer transition-all ${
+              className={`px-4 py-1.5 rounded-full text-[12px] font-medium border cursor-pointer transition-all duration-300 ${
                 sortBy === opt.key
                   ? 'bg-foreground text-white border-foreground'
-                  : 'bg-transparent text-muted border-border hover:border-foreground/30'
+                  : 'bg-transparent text-muted border-border hover:border-foreground/20'
               }`}
             >
               {opt.label}
@@ -101,7 +101,7 @@ export default function ResearchersPage() {
         {/* Grid */}
         <h2 className="sr-only">Search results</h2>
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {filtered.map((r) => (
               <ResearcherCard key={r.id} researcher={r} />
             ))}
