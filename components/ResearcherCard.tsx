@@ -17,7 +17,7 @@ export default function ResearcherCard({
   return (
     <Link
       href={`/researchers/${r.slug}`}
-      className="card block p-6 sm:p-7 no-underline"
+      className="card block p-7 sm:p-8 no-underline"
       aria-label={`${r.name}, ${r.department}`}
     >
       <div className="flex items-start justify-between gap-3 mb-6">

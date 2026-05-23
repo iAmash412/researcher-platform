@@ -169,7 +169,7 @@ export default async function ResearcherProfile({
                 <Link
                   key={rel.id}
                   href={`/researchers/${rel.slug}`}
-                  className="card flex items-center justify-between p-4 sm:p-5 no-underline gap-3"
+                  className="card flex items-center justify-between p-5 sm:p-6 no-underline gap-3"
                 >
                   <div className="min-w-0 flex-1">
                     <p className="text-[13px] sm:text-[14px] font-medium text-foreground truncate">{rel.name}</p>
