@@ -110,7 +110,7 @@ export default function Home() {
                 <Link
                   key={field.slug}
                   href={`/fields/${field.slug}`}
-                  className="group flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-transparent hover:bg-white hover:scale-[1.02] transition-all duration-300"
+                  className="group flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-transparent hover:bg-white transition-all duration-300"
                 >
                   <div className="min-w-0">
                     <h3 className="text-[13px] sm:text-[14px] font-medium text-foreground group-hover:text-accent transition-colors truncate">
