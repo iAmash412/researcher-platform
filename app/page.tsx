@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* ── Stats ── */}
         <section className="border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-6 py-10 sm:py-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+          <div className="max-w-[1200px] mx-auto px-6 py-12 sm:py-16 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12">
             <div>
               <div className="stat-value">{stats.totalResearchers}</div>
               <div className="stat-label">Researchers</div>
@@ -71,9 +71,9 @@ export default function Home() {
 
         {/* ── Featured Researchers ── */}
         <section className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24">
-          <div className="flex items-end justify-between mb-10 gap-4">
+          <div className="flex items-end justify-between mb-12 gap-4">
             <div>
-              <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
+              <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
                 Featured
               </p>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
@@ -88,7 +88,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {featured.map((r) => (
               <ResearcherCard key={r.id} researcher={r} />
             ))}
@@ -110,13 +110,13 @@ export default function Home() {
                 <Link
                   key={field.slug}
                   href={`/fields/${field.slug}`}
-                  className="group flex items-center justify-between p-4 rounded-lg border border-transparent hover:border-border hover:bg-white transition-all"
+                  className="group flex items-center justify-between p-5 rounded-lg border border-transparent hover:border-border hover:bg-white transition-all"
                 >
                   <div className="min-w-0">
                     <h3 className="text-[13px] sm:text-[14px] font-medium text-foreground group-hover:text-accent transition-colors truncate">
                       {field.name}
                     </h3>
-                    <p className="text-[11px] sm:text-[12px] text-muted mt-0.5">
+                    <p className="text-[11px] sm:text-[12px] text-muted mt-1">
                       {field.researcher_count} researchers · {formatNumber(field.total_citations)} citations
                     </p>
                   </div>

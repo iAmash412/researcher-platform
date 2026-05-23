@@ -101,7 +101,7 @@ export default function ResearchersPage() {
         {/* Grid */}
         <h2 className="sr-only">Search results</h2>
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((r) => (
               <ResearcherCard key={r.id} researcher={r} />
             ))}
