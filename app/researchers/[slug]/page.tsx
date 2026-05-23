@@ -46,7 +46,7 @@ export default async function ResearcherProfile({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[720px] mx-auto px-5 pt-10 pb-16">
+      <main id="main" className="max-w-[720px] mx-auto px-6 sm:px-8 pt-10 pb-16">
         {/* Back */}
         <Link
           href="/researchers"
@@ -61,17 +61,17 @@ export default async function ResearcherProfile({
           <span className={`badge mb-3 ${getCareerBadgeClass(r.career_stage)}`}>
             {r.career_stage}
           </span>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-1">
             {r.name}
           </h1>
-          <p className="text-[14px] text-text-secondary">{r.department}</p>
-          <p className="text-[13px] text-muted mt-0.5">
+          <p className="text-[13px] sm:text-[14px] text-text-secondary">{r.department}</p>
+          <p className="text-[12px] sm:text-[13px] text-muted mt-0.5">
             {r.institution} · {r.country}
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 p-5 rounded-lg bg-surface-alt border border-border mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 p-4 sm:p-5 rounded-lg bg-surface-alt border border-border mb-8">
           <div>
             <div className="stat-value">{r.h_index}</div>
             <div className="stat-label">h-index</div>
@@ -165,15 +165,15 @@ export default async function ResearcherProfile({
                 <Link
                   key={rel.id}
                   href={`/researchers/${rel.slug}`}
-                  className="card flex items-center justify-between p-4 no-underline"
+                  className="card flex items-center justify-between p-3 sm:p-4 no-underline gap-2"
                 >
-                  <div className="min-w-0">
-                    <p className="text-[14px] font-medium text-foreground truncate">{rel.name}</p>
-                    <p className="text-[12px] text-muted truncate">{rel.department}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[13px] sm:text-[14px] font-medium text-foreground truncate">{rel.name}</p>
+                    <p className="text-[11px] sm:text-[12px] text-muted truncate">{rel.department}</p>
                   </div>
-                  <div className="text-right shrink-0 ml-3">
-                    <p className="text-[13px] font-semibold">h-{rel.h_index}</p>
-                    <p className="text-[11px] text-muted">{formatNumber(rel.citation_count)}</p>
+                  <div className="text-right shrink-0">
+                    <p className="text-[12px] sm:text-[13px] font-semibold">h-{rel.h_index}</p>
+                    <p className="text-[10px] sm:text-[11px] text-muted">{formatNumber(rel.citation_count)}</p>
                   </div>
                 </Link>
               ))}

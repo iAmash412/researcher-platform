@@ -46,7 +46,7 @@ export default async function FieldPage({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[1080px] mx-auto px-5 pt-10 pb-16">
+      <main id="main" className="max-w-[1080px] mx-auto px-6 sm:px-8 pt-10 pb-16">
         {/* Back */}
         <Link
           href="/researchers"
@@ -61,10 +61,10 @@ export default async function FieldPage({
           <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
             Field
           </p>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-3">
             {field.name}
           </h1>
-          <div className="flex items-center gap-5 text-[13px] text-text-secondary">
+          <div className="flex items-center gap-4 sm:gap-5 text-[12px] sm:text-[13px] text-text-secondary">
             <span><strong className="text-foreground">{field.researcher_count}</strong> researchers</span>
             <span><strong className="text-foreground">{formatNumber(field.total_citations)}</strong> citations</span>
           </div>

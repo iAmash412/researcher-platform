@@ -47,13 +47,13 @@ export default function ResearchersPage() {
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[1080px] mx-auto px-5 pt-10 pb-16">
+      <main id="main" className="max-w-[1080px] mx-auto px-6 sm:px-8 pt-10 pb-16">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-2">
             Researchers
           </h1>
-          <p className="text-[14px] text-text-secondary">
+          <p className="text-[13px] sm:text-[14px] text-text-secondary">
             {allResearchers.length} researchers across {fields.length} fields · {formatNumber(totalCitations)} total citations
           </p>
         </div>

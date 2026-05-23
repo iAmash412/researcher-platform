@@ -16,7 +16,7 @@ export default function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-[1080px] mx-auto flex items-center justify-between h-14 px-5">
+      <div className="max-w-[1080px] mx-auto flex items-center justify-between h-14 px-6 sm:px-8">
         <Link href="/" className="text-[15px] font-semibold tracking-tight">
           Researcher
         </Link>
@@ -49,7 +49,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-border px-5 py-3 bg-white flex flex-col gap-2">
+        <div className="md:hidden border-t border-border px-6 py-3 bg-white flex flex-col gap-2">
           <Link
             href="/researchers"
             className="text-[13px] py-2 text-foreground"
