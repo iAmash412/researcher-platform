@@ -1,26 +1,12 @@
 /**
- * Individual researcher profile page.
- * Displays full details: stats, topics, career stage, recent work.
- * Server component with static generation from JSON data.
+ * Individual researcher profile page — clean minimal layout.
  */
 
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import {
-  ArrowLeft,
-  ArrowRight,
-  Award,
-  BookOpen,
-  Building2,
-  ExternalLink,
-  Quote,
-  Sparkles,
-  Calendar,
-} from 'lucide-react'
+import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import RevealSection from '@/components/RevealSection'
-import ScrollProgress from '@/components/ScrollProgress'
 import {
   getAllResearchers,
   getResearcherBySlug,
@@ -29,7 +15,6 @@ import {
   getCareerBadgeClass,
 } from '@/lib/researchers'
 
-// Generate static paths for all researchers
 export function generateStaticParams() {
   return getAllResearchers().map((r) => ({ slug: r.slug }))
 }
@@ -39,7 +24,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   if (!r) return { title: 'Researcher Not Found' }
   return {
     title: `${r.name} — ${r.institution} | Researcher Platform`,
-    description: `${r.name}, ${r.department} at ${r.institution}. h-index: ${r.h_index}, ${formatNumber(r.citation_count)} citations. Research topics: ${r.topics.slice(0, 3).join(', ')}.`,
+    description: `${r.name}, ${r.department} at ${r.institution}. h-index: ${r.h_index}, ${formatNumber(r.citation_count)} citations.`,
   }
 }
 
@@ -52,7 +37,6 @@ export default async function ResearcherProfile({
   const r = getResearcherBySlug(slug)
   if (!r) notFound()
 
-  // Related researchers in the same field (excluding current)
   const related = getResearchersByField(r.field_slug)
     .filter((rel) => rel.id !== r.id)
     .slice(0, 4)
@@ -61,278 +45,141 @@ export default async function ResearcherProfile({
     <>
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
-      <div id="scroll-progress" />
-      <ScrollProgress />
 
-      <main id="main" className="pt-28 pb-16 px-4 md:px-6">
-        <div className="max-w-[900px] mx-auto">
-          {/* Back link */}
-          <Link
-            href="/researchers"
-            className="inline-flex items-center gap-2 text-[13px] text-text-body hover:text-accent transition-colors no-underline mb-8"
-          >
-            <ArrowLeft size={14} />
-            Back to directory
-          </Link>
+      <main id="main" className="max-w-[720px] mx-auto px-5 pt-10 pb-16">
+        {/* Back */}
+        <Link
+          href="/researchers"
+          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-8"
+        >
+          <ArrowLeft size={14} />
+          Directory
+        </Link>
 
-          {/* -- Header card (dark) -- */}
-          <RevealSection
-            className="section-card section-card-dark p-6 sm:p-8 md:p-12 mb-6"
-            style={{ position: 'relative', overflow: 'hidden' }}
-          >
-            {/* Grid background */}
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                pointerEvents: 'none',
-                backgroundImage:
-                  'linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)',
-                backgroundSize: '72px 72px',
-                maskImage:
-                  'radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent)',
-                WebkitMaskImage:
-                  'radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent)',
-              }}
-            />
+        {/* Header */}
+        <div className="mb-8">
+          <span className={`badge mb-3 ${getCareerBadgeClass(r.career_stage)}`}>
+            {r.career_stage}
+          </span>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1">
+            {r.name}
+          </h1>
+          <p className="text-[14px] text-text-secondary">{r.department}</p>
+          <p className="text-[13px] text-muted mt-0.5">
+            {r.institution} · {r.country}
+          </p>
+        </div>
 
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              <div className="flex items-start justify-between gap-4 mb-6 flex-wrap reveal reveal-d1">
-                <span
-                  className={`badge ${getCareerBadgeClass(r.career_stage)}`}
-                >
-                  {r.career_stage}
-                </span>
-                {r.orcid && (
-                  <a
-                    href={`https://orcid.org/${r.orcid}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="ORCID profile (opens in new tab)"
-                    className="flex items-center gap-1.5 text-[12px] text-accent hover:text-accent-light transition-colors no-underline"
-                  >
-                    ORCID
-                    <ExternalLink size={11} aria-hidden="true" />
-                  </a>
-                )}
-              </div>
+        {/* Stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 p-5 rounded-lg bg-surface-alt border border-border mb-8">
+          <div>
+            <div className="stat-value">{r.h_index}</div>
+            <div className="stat-label">h-index</div>
+          </div>
+          <div>
+            <div className="stat-value">{formatNumber(r.citation_count)}</div>
+            <div className="stat-label">Citations</div>
+          </div>
+          <div>
+            <div className="stat-value">{r.works_count}</div>
+            <div className="stat-label">Works</div>
+          </div>
+          <div>
+            <div className="stat-value">{r.recent_works_count}</div>
+            <div className="stat-label">Recent</div>
+          </div>
+        </div>
 
-              <h1
-                className="reveal reveal-d2"
-                style={{
-                  fontSize: 'clamp(32px, 5vw, 56px)',
-                  fontWeight: 700,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1,
-                  color: '#efefef',
-                  marginBottom: '8px',
-                }}
+        {/* Topics */}
+        <div className="mb-8">
+          <h2 className="text-[12px] font-medium text-muted uppercase tracking-wider mb-3">
+            Research Topics
+          </h2>
+          <div className="flex flex-wrap gap-1.5">
+            {r.topics.map((t) => (
+              <span key={t} className="tag">{t}</span>
+            ))}
+          </div>
+          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border text-[13px] text-text-secondary">
+            <span>Last published: {r.last_publication_year}</span>
+            <Link
+              href={`/fields/${r.field_slug}`}
+              className="text-accent hover:underline flex items-center gap-1"
+            >
+              {r.field} <ArrowRight size={12} />
+            </Link>
+          </div>
+        </div>
+
+        {/* External links */}
+        <div className="mb-10">
+          <h2 className="text-[12px] font-medium text-muted uppercase tracking-wider mb-3">
+            Profiles
+          </h2>
+          <div className="flex flex-wrap gap-2">
+            {r.orcid && (
+              <a
+                href={`https://orcid.org/${r.orcid}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary !text-[12px]"
               >
-                {r.name}
-              </h1>
+                ORCID <ExternalLink size={11} />
+              </a>
+            )}
+            <a
+              href={`https://openalex.org/authors/${r.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary !text-[12px]"
+            >
+              OpenAlex <ExternalLink size={11} />
+            </a>
+            <a
+              href={`https://scholar.google.com/scholar?q=author:"${encodeURIComponent(r.name)}"+${encodeURIComponent(r.institution)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary !text-[12px]"
+            >
+              Google Scholar <ExternalLink size={11} />
+            </a>
+          </div>
+        </div>
 
-              <p className="text-[15px] text-[rgba(255,255,255,0.5)] mb-1 reveal reveal-d3">
-                {r.department}
-              </p>
-
-              <div className="flex items-center gap-2 text-[13px] text-[rgba(255,255,255,0.35)] reveal reveal-d3">
-                <Building2 size={13} />
-                <Link
-                  href={`/researchers?institution=${r.institution_slug}`}
-                  className="hover:text-accent transition-colors no-underline text-[rgba(255,255,255,0.35)]"
-                >
-                  {r.institution}
-                </Link>
-                <span>·</span>
-                <span>{r.country}</span>
-              </div>
-
-              {/* Stats row */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 pt-6 border-t border-[rgba(255,255,255,0.07)] reveal reveal-d4">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Award size={14} className="text-accent" />
-                    <span className="text-[11px] text-[rgba(255,255,255,0.35)] uppercase tracking-wider">
-                      h-index
-                    </span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#efefef] tracking-tight">
-                    {r.h_index}
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Quote size={14} className="text-accent" />
-                    <span className="text-[11px] text-[rgba(255,255,255,0.35)] uppercase tracking-wider">
-                      Citations
-                    </span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#efefef] tracking-tight">
-                    {formatNumber(r.citation_count)}
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <BookOpen size={14} className="text-accent" />
-                    <span className="text-[11px] text-[rgba(255,255,255,0.35)] uppercase tracking-wider">
-                      Works
-                    </span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#efefef] tracking-tight">
-                    {r.works_count}
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Sparkles size={14} className="text-accent" />
-                    <span className="text-[11px] text-[rgba(255,255,255,0.35)] uppercase tracking-wider">
-                      Recent
-                    </span>
-                  </div>
-                  <div className="text-3xl font-bold text-[#efefef] tracking-tight">
-                    {r.recent_works_count}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </RevealSection>
-
-          {/* -- Research topics (light) -- */}
-          <RevealSection className="section-card section-card-light p-8 md:p-10 mb-6 border border-[rgba(0,0,0,0.06)]">
-            <h2 className="text-[13px] font-semibold text-muted uppercase tracking-wider mb-4 reveal reveal-d1">
-              Research Topics
-            </h2>
-            <div className="flex flex-wrap gap-2 reveal reveal-d2">
-              {r.topics.map((topic) => (
-                <span
-                  key={topic}
-                  className="tag-pill tag-pill-light text-[13px] !py-2 !px-4"
-                >
-                  {topic}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-4 mt-6 pt-4 border-t border-[rgba(0,0,0,0.06)] reveal reveal-d3">
-              <div className="flex items-center gap-2 text-[13px] text-text-body">
-                <Calendar size={14} className="text-muted" />
-                Last published: {r.last_publication_year}
-              </div>
+        {/* Related */}
+        {related.length > 0 && (
+          <div className="border-t border-border pt-10">
+            <div className="flex items-end justify-between mb-5">
+              <h2 className="text-lg font-semibold tracking-tight">
+                More in {r.field}
+              </h2>
               <Link
                 href={`/fields/${r.field_slug}`}
-                className="flex items-center gap-1.5 text-[13px] text-accent hover:text-accent-light transition-colors no-underline"
+                className="text-[12px] text-muted hover:text-foreground transition-colors flex items-center gap-1"
               >
-                {r.field}
-                <ArrowRight size={12} />
+                View all <ArrowRight size={12} />
               </Link>
             </div>
-          </RevealSection>
-
-          {/* -- External links -- */}
-          {(r.orcid || r.profile_url) && (
-            <RevealSection className="section-card section-card-tinted p-8 md:p-10 mb-6">
-              <h2 className="text-[13px] font-semibold text-muted uppercase tracking-wider mb-4 reveal reveal-d1">
-                External Profiles
-              </h2>
-              <div className="flex flex-wrap gap-3 reveal reveal-d2">
-                {r.orcid && (
-                  <a
-                    href={`https://orcid.org/${r.orcid}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="ORCID Profile (opens in new tab)"
-                    className="btn-outline no-underline !text-[13px]"
-                  >
-                    ORCID Profile
-                    <ExternalLink size={13} aria-hidden="true" />
-                  </a>
-                )}
-                <a
-                  href={`https://openalex.org/authors/${r.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="OpenAlex profile (opens in new tab)"
-                  className="btn-outline no-underline !text-[13px]"
-                >
-                  OpenAlex
-                  <ExternalLink size={13} aria-hidden="true" />
-                </a>
-                <a
-                  href={`https://scholar.google.com/scholar?q=author:"${encodeURIComponent(r.name)}"+${encodeURIComponent(r.institution)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Google Scholar profile (opens in new tab)"
-                  className="btn-outline no-underline !text-[13px]"
-                >
-                  Google Scholar
-                  <ExternalLink size={13} aria-hidden="true" />
-                </a>
-              </div>
-            </RevealSection>
-          )}
-
-          {/* -- Related researchers -- */}
-          {related.length > 0 && (
-            <RevealSection className="mt-12">
-              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6 gap-2">
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                    <span className="section-num reveal reveal-d1">More in {r.field}</span>
-                  </div>
-                  <h2
-                    className="reveal reveal-d2"
-                    style={{
-                      fontSize: 'clamp(24px, 3vw, 36px)',
-                      fontWeight: 700,
-                      letterSpacing: '-0.03em',
-                      lineHeight: 1,
-                      color: 'var(--text)',
-                    }}
-                  >
-                    Related researchers
-                  </h2>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {related.map((rel) => (
                 <Link
-                  href={`/fields/${r.field_slug}`}
-                  className="text-[13px] text-accent hover:text-accent-light transition-colors no-underline flex items-center gap-1 reveal reveal-d2"
+                  key={rel.id}
+                  href={`/researchers/${rel.slug}`}
+                  className="card flex items-center justify-between p-4 no-underline"
                 >
-                  View all
-                  <ArrowRight size={13} />
+                  <div className="min-w-0">
+                    <p className="text-[14px] font-medium text-foreground truncate">{rel.name}</p>
+                    <p className="text-[12px] text-muted truncate">{rel.department}</p>
+                  </div>
+                  <div className="text-right shrink-0 ml-3">
+                    <p className="text-[13px] font-semibold">h-{rel.h_index}</p>
+                    <p className="text-[11px] text-muted">{formatNumber(rel.citation_count)}</p>
+                  </div>
                 </Link>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {related.map((rel, i) => (
-                  <Link
-                    key={rel.id}
-                    href={`/researchers/${rel.slug}`}
-                    className={`researcher-card flex items-center gap-4 bg-surface p-5 border border-[rgba(0,0,0,0.06)] no-underline reveal reveal-d${Math.min(i + 3, 6)}`}
-                  >
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-[15px] font-semibold text-foreground truncate">
-                        {rel.name}
-                      </h3>
-                      <p className="text-[12px] text-text-body mt-0.5 truncate">
-                        {rel.department}
-                      </p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-[14px] font-bold text-foreground">
-                        h-{rel.h_index}
-                      </div>
-                      <div className="text-[11px] text-muted">
-                        {formatNumber(rel.citation_count)}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </RevealSection>
-          )}
-        </div>
+              ))}
+            </div>
+          </div>
+        )}
       </main>
 
       <Footer />
