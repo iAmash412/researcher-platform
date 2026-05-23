@@ -48,10 +48,10 @@ export default function ResearchersPage() {
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[1200px] mx-auto px-6 pt-12 pb-20">
+      <main id="main" className="max-w-[1200px] mx-auto px-6 pt-20 sm:pt-28 pb-24">
         {/* Header */}
-        <div className="mb-10">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-3">
+        <div className="mb-14">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-4">
             Researchers
           </h1>
           <p className="text-[13px] sm:text-[14px] text-text-secondary">

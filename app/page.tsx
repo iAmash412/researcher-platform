@@ -28,14 +28,14 @@ export default function Home() {
 
       <main id="main">
         {/* ── Hero ── */}
-        <section className="max-w-[1200px] mx-auto px-6 pt-24 pb-20 sm:pt-36 sm:pb-28">
-          <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-5">
+        <section className="max-w-[1200px] mx-auto px-6 pt-28 pb-24 sm:pt-40 sm:pb-32">
+          <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-6">
             Academic Directory
           </p>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-[1] mb-6 max-w-[600px]" style={{ letterSpacing: '-0.02em' }}>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-[1] mb-8 max-w-[600px]" style={{ letterSpacing: '-0.02em' }}>
             Discover the minds shaping research
           </h1>
-          <p className="text-[14px] sm:text-base text-text-secondary leading-relaxed max-w-[480px] mb-10">
+          <p className="text-[14px] sm:text-base text-text-secondary leading-relaxed max-w-[480px] mb-12">
             Browse researchers by institution, field, and impact.
             Built from the inside of the research world.
           </p>
@@ -70,10 +70,10 @@ export default function Home() {
         </section>
 
         {/* ── Featured Researchers ── */}
-        <section className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28">
-          <div className="flex items-end justify-between mb-14 gap-4">
+        <section className="max-w-[1200px] mx-auto px-6 py-24 sm:py-32">
+          <div className="flex items-end justify-between mb-16 gap-4">
             <div>
-              <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
+              <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-4">
                 Featured
               </p>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight" style={{ letterSpacing: '-0.02em' }}>
@@ -97,11 +97,11 @@ export default function Home() {
 
         {/* ── Fields ── */}
         <section className="bg-[#f7f8f9]">
-          <div className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28">
-            <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
+          <div className="max-w-[1200px] mx-auto px-6 py-24 sm:py-32">
+            <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-4">
               Browse
             </p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-12" style={{ letterSpacing: '-0.02em' }}>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-16" style={{ letterSpacing: '-0.02em' }}>
               Research fields
             </h2>
 
@@ -131,11 +131,11 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="max-w-[1200px] mx-auto px-6 py-24 sm:py-32 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-5" style={{ letterSpacing: '-0.02em' }}>
+        <section className="max-w-[1200px] mx-auto px-6 py-28 sm:py-36 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-7" style={{ letterSpacing: '-0.02em' }}>
             Research should be visible
           </h2>
-          <p className="text-[14px] sm:text-[15px] text-text-secondary max-w-[420px] mx-auto mb-10 leading-relaxed">
+          <p className="text-[14px] sm:text-[15px] text-text-secondary max-w-[420px] mx-auto mb-12 leading-relaxed">
             Academic research impacts every industry and innovation.
             The researchers behind it deserve to be found.
           </p>

@@ -49,23 +49,23 @@ export default async function ResearcherProfile({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[780px] mx-auto px-6 pt-12 pb-20">
+      <main id="main" className="max-w-[780px] mx-auto px-6 pt-16 sm:pt-24 pb-24">
         {/* Back */}
         <Link
           href="/researchers"
-          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-10"
+          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-14"
         >
           <ArrowLeft size={14} />
           Directory
         </Link>
 
         {/* Header */}
-        <div className="mb-8">
-          <span className={`badge mb-3 ${getCareerBadgeClass(r.career_stage)}`}>
+        <div className="mb-12">
+          <span className={`badge mb-4 ${getCareerBadgeClass(r.career_stage)}`}>
             {r.career_stage}
           </span>
 
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-1" style={{ letterSpacing: '-0.02em' }}>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-2" style={{ letterSpacing: '-0.02em' }}>
             {r.name}
           </h1>
           <p className="text-[13px] sm:text-[14px] text-text-secondary">{r.department}</p>
