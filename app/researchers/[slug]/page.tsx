@@ -65,7 +65,7 @@ export default async function ResearcherProfile({
             {r.career_stage}
           </span>
 
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-1">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-1" style={{ letterSpacing: '-0.02em' }}>
             {r.name}
           </h1>
           <p className="text-[13px] sm:text-[14px] text-text-secondary">{r.department}</p>
@@ -75,7 +75,7 @@ export default async function ResearcherProfile({
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-surface-alt border border-border mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 p-6 sm:p-8 rounded-[var(--radius-card)] bg-[#f7f8f9] mb-12">
           <div>
             <div className="stat-value">{r.h_index}</div>
             <div className="stat-label">h-index</div>

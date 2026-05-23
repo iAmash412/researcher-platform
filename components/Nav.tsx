@@ -15,8 +15,8 @@ export default function Nav() {
   const isDirectory = pathname.startsWith('/researchers') || pathname.startsWith('/fields')
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-xl border-b border-black/[0.06]">
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-16 px-6">
+    <nav className="sticky top-0 z-50 border-b border-black/[0.06] bg-[hsla(0,0%,100%,0.5)] backdrop-blur-[5px]" style={{ WebkitBackdropFilter: 'blur(5px)' }}>
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-[clamp(48px,3.5vw,60px)] px-6">
         <Link href="/" className="text-[15px] font-semibold tracking-tight">
           Researcher
         </Link>
@@ -26,13 +26,13 @@ export default function Nav() {
           <Link
             href="/researchers"
             aria-current={isDirectory ? 'page' : undefined}
-            className={`text-[13px] transition-colors ${
-              isDirectory ? 'text-foreground font-medium' : 'text-muted hover:text-foreground'
+            className={`text-[13px] transition-colors duration-300 ${
+              isDirectory ? 'text-foreground font-medium' : 'text-black/50 hover:text-foreground'
             }`}
           >
             Directory
           </Link>
-          <Link href="/researchers" className="btn-primary text-[12px] !py-2 !px-4">
+          <Link href="/researchers" className="btn-primary text-[12px] !py-2.5 !px-5">
             Explore
           </Link>
         </div>

@@ -32,7 +32,7 @@ export default function Home() {
           <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-5">
             Academic Directory
           </p>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-6 max-w-[600px]">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-[1] mb-6 max-w-[600px]" style={{ letterSpacing: '-0.02em' }}>
             Discover the minds shaping research
           </h1>
           <p className="text-[14px] sm:text-base text-text-secondary leading-relaxed max-w-[480px] mb-10">
@@ -48,8 +48,8 @@ export default function Home() {
         </section>
 
         {/* ── Stats ── */}
-        <section className="border-y border-black/[0.06]">
-          <div className="max-w-[1200px] mx-auto px-6 py-14 sm:py-20 grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-14">
+        <section className="bg-[#f7f8f9]">
+          <div className="max-w-[1200px] mx-auto px-6 py-16 sm:py-20 grid grid-cols-2 sm:grid-cols-4 gap-10 sm:gap-14">
             <div>
               <div className="stat-value">{stats.totalResearchers}</div>
               <div className="stat-label">Researchers</div>
@@ -76,7 +76,7 @@ export default function Home() {
               <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
                 Featured
               </p>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight" style={{ letterSpacing: '-0.02em' }}>
                 Top researchers
               </h2>
             </div>
@@ -96,21 +96,21 @@ export default function Home() {
         </section>
 
         {/* ── Fields ── */}
-        <section className="bg-surface-alt border-y border-black/[0.06]">
+        <section className="bg-[#f7f8f9]">
           <div className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28">
             <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
               Browse
             </p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-12" style={{ letterSpacing: '-0.02em' }}>
               Research fields
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {fields.map((field) => (
                 <Link
                   key={field.slug}
                   href={`/fields/${field.slug}`}
-                  className="group flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-transparent hover:border-black/[0.08] hover:bg-white transition-all duration-300"
+                  className="group flex items-center justify-between p-5 sm:p-6 rounded-2xl border border-transparent hover:bg-white hover:scale-[1.02] transition-all duration-300"
                 >
                   <div className="min-w-0">
                     <h3 className="text-[13px] sm:text-[14px] font-medium text-foreground group-hover:text-accent transition-colors truncate">
@@ -132,7 +132,7 @@ export default function Home() {
 
         {/* ── CTA ── */}
         <section className="max-w-[1200px] mx-auto px-6 py-24 sm:py-32 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-5">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight mb-5" style={{ letterSpacing: '-0.02em' }}>
             Research should be visible
           </h2>
           <p className="text-[14px] sm:text-[15px] text-text-secondary max-w-[420px] mx-auto mb-10 leading-relaxed">
