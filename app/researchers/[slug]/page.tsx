@@ -75,7 +75,7 @@ export default async function ResearcherProfile({
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 p-6 sm:p-8 rounded-[var(--radius-card)] bg-[#f7f8f9] mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 p-6 sm:p-8 rounded-none bg-[#f7f8f9] mb-12">
           <div>
             <div className="stat-value">{r.h_index}</div>
             <div className="stat-label">h-index</div>
