@@ -41,9 +41,11 @@ export default function ResearcherCard({
       </div>
 
       {r.topics.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col items-start gap-2">
           {r.topics.slice(0, 2).map((t) => (
-            <span key={t} className="tag text-[11px]">{t}</span>
+            <span key={t} className="tag text-[11px] max-w-full min-w-0">
+              <span className="truncate min-w-0 block">{t}</span>
+            </span>
           ))}
         </div>
       )}
