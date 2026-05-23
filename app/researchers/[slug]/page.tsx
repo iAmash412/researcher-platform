@@ -49,7 +49,7 @@ export default async function ResearcherProfile({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[720px] mx-auto px-6 sm:px-8 pt-10 pb-16">
+      <main id="main" className="max-w-[780px] mx-auto px-5 pt-10 pb-16">
         {/* Back */}
         <Link
           href="/researchers"
