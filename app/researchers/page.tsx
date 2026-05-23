@@ -48,10 +48,10 @@ export default function ResearchersPage() {
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[1200px] mx-auto px-6 pt-10 pb-16">
+      <main id="main" className="max-w-[1200px] mx-auto px-6 pt-12 pb-20">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-2">
+        <div className="mb-10">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-3">
             Researchers
           </h1>
           <p className="text-[13px] sm:text-[14px] text-text-secondary">
@@ -60,7 +60,7 @@ export default function ResearchersPage() {
         </div>
 
         {/* Search + Filters */}
-        <div className="mb-6">
+        <div className="mb-8">
           <SearchBar
             query={query}
             onQueryChange={setQuery}
@@ -75,7 +75,7 @@ export default function ResearchersPage() {
         </div>
 
         {/* Sort */}
-        <div className="flex flex-wrap items-center gap-1.5 mb-6" role="group" aria-label="Sort options">
+        <div className="flex flex-wrap items-center gap-2 mb-8" role="group" aria-label="Sort options">
           <span className="text-[11px] text-muted uppercase tracking-wider mr-1">Sort</span>
           {([
             { key: 'citations', label: 'Citations' },
@@ -101,7 +101,7 @@ export default function ResearchersPage() {
         {/* Grid */}
         <h2 className="sr-only">Search results</h2>
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((r) => (
               <ResearcherCard key={r.id} researcher={r} />
             ))}

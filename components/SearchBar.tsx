@@ -51,7 +51,7 @@ export default function SearchBar({
         />
       </div>
 
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
         <select
           value={fieldFilter}
           onChange={(e) => onFieldChange(e.target.value)}

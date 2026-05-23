@@ -28,14 +28,14 @@ export default function Home() {
 
       <main id="main">
         {/* ── Hero ── */}
-        <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-14 sm:pt-28 sm:pb-20">
-          <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-4">
+        <section className="max-w-[1200px] mx-auto px-6 pt-20 pb-16 sm:pt-32 sm:pb-24">
+          <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-5">
             Academic Directory
           </p>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-5 max-w-[600px]">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-6 max-w-[600px]">
             Discover the minds shaping research
           </h1>
-          <p className="text-[14px] sm:text-base text-text-secondary leading-relaxed max-w-[480px] mb-8">
+          <p className="text-[14px] sm:text-base text-text-secondary leading-relaxed max-w-[480px] mb-10">
             Browse researchers by institution, field, and impact.
             Built from the inside of the research world.
           </p>
@@ -49,7 +49,7 @@ export default function Home() {
 
         {/* ── Stats ── */}
         <section className="border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          <div className="max-w-[1200px] mx-auto px-6 py-10 sm:py-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
             <div>
               <div className="stat-value">{stats.totalResearchers}</div>
               <div className="stat-label">Researchers</div>
@@ -70,8 +70,8 @@ export default function Home() {
         </section>
 
         {/* ── Featured Researchers ── */}
-        <section className="max-w-[1200px] mx-auto px-6 py-14 sm:py-20">
-          <div className="flex items-end justify-between mb-8 gap-4">
+        <section className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24">
+          <div className="flex items-end justify-between mb-10 gap-4">
             <div>
               <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
                 Featured
@@ -88,7 +88,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {featured.map((r) => (
               <ResearcherCard key={r.id} researcher={r} />
             ))}
@@ -97,15 +97,15 @@ export default function Home() {
 
         {/* ── Fields ── */}
         <section className="bg-surface-alt border-y border-border">
-          <div className="max-w-[1200px] mx-auto px-6 py-14 sm:py-20">
-            <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
+          <div className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24">
+            <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
               Browse
             </p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-10">
               Research fields
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {fields.map((field) => (
                 <Link
                   key={field.slug}
@@ -131,11 +131,11 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="max-w-[1200px] mx-auto px-6 py-16 sm:py-24 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-4">
+        <section className="max-w-[1200px] mx-auto px-6 py-20 sm:py-28 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-5">
             Research should be visible
           </h2>
-          <p className="text-[14px] sm:text-[15px] text-text-secondary max-w-[420px] mx-auto mb-8 leading-relaxed">
+          <p className="text-[14px] sm:text-[15px] text-text-secondary max-w-[420px] mx-auto mb-10 leading-relaxed">
             Academic research impacts every industry and innovation.
             The researchers behind it deserve to be found.
           </p>

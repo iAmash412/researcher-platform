@@ -49,11 +49,11 @@ export default async function ResearcherProfile({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[780px] mx-auto px-6 pt-10 pb-16">
+      <main id="main" className="max-w-[780px] mx-auto px-6 pt-12 pb-20">
         {/* Back */}
         <Link
           href="/researchers"
-          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-8"
+          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-10"
         >
           <ArrowLeft size={14} />
           Directory
@@ -75,7 +75,7 @@ export default async function ResearcherProfile({
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 p-4 sm:p-5 rounded-lg bg-surface-alt border border-border mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6 p-5 sm:p-6 rounded-lg bg-surface-alt border border-border mb-10">
           <div>
             <div className="stat-value">{r.h_index}</div>
             <div className="stat-label">h-index</div>
@@ -95,11 +95,11 @@ export default async function ResearcherProfile({
         </div>
 
         {/* Topics */}
-        <div className="mb-8">
-          <h2 className="text-[12px] font-medium text-muted uppercase tracking-wider mb-3">
+        <div className="mb-10">
+          <h2 className="text-[12px] font-medium text-muted uppercase tracking-wider mb-4">
             Research Topics
           </h2>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {r.topics.map((t) => (
               <span key={t} className="tag">{t}</span>
             ))}
@@ -116,11 +116,11 @@ export default async function ResearcherProfile({
         </div>
 
         {/* External links */}
-        <div className="mb-10">
-          <h2 className="text-[12px] font-medium text-muted uppercase tracking-wider mb-3">
+        <div className="mb-12">
+          <h2 className="text-[12px] font-medium text-muted uppercase tracking-wider mb-4">
             Profiles
           </h2>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2.5">
             {r.orcid && (
               <a
                 href={`https://orcid.org/${r.orcid}`}
@@ -152,8 +152,8 @@ export default async function ResearcherProfile({
 
         {/* Related */}
         {related.length > 0 && (
-          <div className="border-t border-border pt-10">
-            <div className="flex items-end justify-between mb-5">
+          <div className="border-t border-border pt-12">
+            <div className="flex items-end justify-between mb-6">
               <h2 className="text-lg font-semibold tracking-tight">
                 More in {r.field}
               </h2>
@@ -164,7 +164,7 @@ export default async function ResearcherProfile({
                 View all <ArrowRight size={12} />
               </Link>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {related.map((rel) => (
                 <Link
                   key={rel.id}

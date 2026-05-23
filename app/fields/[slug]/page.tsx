@@ -49,22 +49,22 @@ export default async function FieldPage({
       <a href="#main" className="skip-link">Skip to content</a>
       <Nav />
 
-      <main id="main" className="max-w-[1200px] mx-auto px-6 pt-10 pb-16">
+      <main id="main" className="max-w-[1200px] mx-auto px-6 pt-12 pb-20">
         {/* Back */}
         <Link
           href="/researchers"
-          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-8"
+          className="inline-flex items-center gap-1.5 text-[13px] text-muted hover:text-foreground transition-colors mb-10"
         >
           <ArrowLeft size={14} />
           Directory
         </Link>
 
         {/* Header */}
-        <div className="mb-8">
-          <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-2">
+        <div className="mb-10">
+          <p className="text-[12px] font-medium text-accent uppercase tracking-widest mb-3">
             Field
           </p>
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-3">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight mb-4">
             {field.name}
           </h1>
           <div className="flex items-center gap-4 sm:gap-5 text-[12px] sm:text-[13px] text-text-secondary">
@@ -74,7 +74,7 @@ export default async function FieldPage({
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {researchers.map((r) => (
             <ResearcherCard key={r.id} researcher={r} />
           ))}
